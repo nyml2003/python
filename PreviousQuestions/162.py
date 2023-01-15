@@ -15,7 +15,7 @@ vis=[False]*n
 dis[0]=0
 q=[]
 edgeNum=0  
-heapq.heappush(q,[dis[0],0])
+heapq.heappush(q,(dis[0],0))
 while q and edgeNum<n:
     x=heapq.heappop(q)
     if vis[x[1]]:
@@ -26,5 +26,5 @@ while q and edgeNum<n:
     for i in range(n):
         if i!=x[1] and edges[x[1]][i]<dis[i]:
             dis[i]=edges[x[1]][i]
-            heapq.heappush(q,[dis[i],i])
+            heapq.heappush(q,(dis[i],i))
 print(round(sum,2))
